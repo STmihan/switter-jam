@@ -78,11 +78,11 @@ jobs:
 
       #Upload to Pages (For WebGL builds)
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+        uses: peaceiris/actions-gh-pages@v3
         if: matrix.targetPlatform == 'WebGL'
         with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: build/WebGL/${{ env.PROJECT_NAME }} # The folder the action should deploy.
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build/WebGL/${{ env.PROJECT_NAME }} # The folder the action should deploy.
 
       # More details on usage here: https://github.com/marketplace/actions/create-release
       - name: Create Release
