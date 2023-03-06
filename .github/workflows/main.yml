@@ -62,7 +62,7 @@ jobs:
           sudo mv build/${{ matrix.targetPlatform }}/${{ env.PROJECT_NAME }}-${{ matrix.targetPlatform }}.zip build/${{ env.PROJECT_NAME }}-${{ matrix.targetPlatform }}.zip
           
       - name: Compress Build
-        if: matrix.targetPlatform != 'StandaloneOSX'
+        if: matrix.targetPlatform != 'StandaloneOSX' && matrix.targetPlatform != 'WebGL'
         run: |
           pushd build/${{ matrix.targetPlatform }}
           sudo zip -r ${{ env.PROJECT_NAME }}-${{ matrix.targetPlatform }}.zip ./*
