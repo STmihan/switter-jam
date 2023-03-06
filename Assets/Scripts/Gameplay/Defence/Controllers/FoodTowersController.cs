@@ -17,6 +17,7 @@ namespace Gameplay.Defence.Controllers
             }
         }
         public event Action<FoodBase> OnSelectedFoodChanged;
+        public event Action<FoodBase> OnFoodCountChanged;
 
         public Grid<FoodTower> Grid { get; private set; }
 
@@ -74,6 +75,7 @@ namespace Gameplay.Defence.Controllers
             
             if (cell.Data.Food == null)
             {
+                OnFoodCountChanged?.Invoke(SelectedFood);
                 cell.Data.SetFood(SelectedFood);
                 SelectedFood = null;
             }

@@ -4,6 +4,7 @@ using Data.Ingredients;
 using DG.Tweening;
 using GameLoop;
 using Gameplay.Controllers;
+using TMPro;
 using UnityEngine;
 
 namespace Gameplay.UI.Prepare.FoodHelper
@@ -13,9 +14,8 @@ namespace Gameplay.UI.Prepare.FoodHelper
         [SerializeField] private RectTransform _content;
         [SerializeField] private FoodHelperIngredientItem _ingredientItemPrefab;
         [SerializeField] private CanvasGroup _canvasGroup;
-        [Header("Animation")]
-        [SerializeField] private float _animationDuration = .5f;
-        
+        [SerializeField] private TMP_Text _countText;
+
         private FoodBase _foodBase;
         private List<FoodHelperIngredientItem> _ingredientItems = new();
 
@@ -23,16 +23,13 @@ namespace Gameplay.UI.Prepare.FoodHelper
 
         private void Start()
         {
+            _countText.text = "";
             FoodController.OnFoodAdded += OnFoodAdded;
         }
 
         private void OnFoodAdded(FoodBase obj)
         {
-            _canvasGroup.DOFade(.3f, _animationDuration);
-            foreach (FoodHelperIngredientItem item in _ingredientItems)
-            {
-                item.HandlingEvents = false;
-            }
+            _countText.text = FoodController.Foods[_foodBase].ToString();
         }
 
         public void SetFoodItem(FoodBase foodBase)
