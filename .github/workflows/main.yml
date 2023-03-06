@@ -21,9 +21,9 @@ jobs:
       fail-fast: false
       matrix:
         targetPlatform:         # These are the definitions from: https://docs.unity3d.com/ScriptReference/BuildTarget.html
-          - StandaloneOSX       # Build a macOS standalone (Intel 64-bit).
-          - StandaloneWindows64 # Build a Windows 64-bit standalone.
-          - StandaloneLinux64   # Build a Linux 64-bit standalone
+#          - StandaloneOSX       # Build a macOS standalone (Intel 64-bit).
+#          - StandaloneWindows64 # Build a Windows 64-bit standalone.
+#          - StandaloneLinux64   # Build a Linux 64-bit standalone
           - WebGL               # Build for WebGL
 
     steps:
