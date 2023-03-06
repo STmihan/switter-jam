@@ -12,8 +12,8 @@ namespace Gameplay.Defence.Controllers
         [SerializeField] private Transform[] _enemySpawnPoints;
         [SerializeField] private float _timeBetweenEnemies = .4f;
 
-        public event Action<EnemyData> OnEnemySpawned;
-        public event Action<EnemyData> OnEnemyDied;
+        public event Action<EnemyView> OnEnemySpawned;
+        public event Action<EnemyView> OnEnemyDied;
         public event Action<EnemyWave> OnWaveEnded;
 
         private List<EnemyView> _enemies = new();
@@ -39,7 +39,7 @@ namespace Gameplay.Defence.Controllers
                     enemyView.transform.position = randomSpawnPoint.position;
                     enemyView.OnEnemyDied += EnemyDied;
                     _enemies.Add(enemyView);
-                    OnEnemySpawned?.Invoke(enemyData);
+                    OnEnemySpawned?.Invoke(enemyView);
                     yield return new WaitForSeconds(_timeBetweenEnemies);
                 }
 
@@ -51,13 +51,31 @@ namespace Gameplay.Defence.Controllers
             {
                 yield return null;
             }
+
             OnWaveEnded?.Invoke(wave);
         }
 
-        private void EnemyDied(EnemyData enemyData)
+        private void EnemyDied(EnemyView enemyData)
         {
             OnEnemyDied?.Invoke(enemyData);
-            _enemies.Remove(_enemies.Find(enemy => enemy.EnemyData == enemyData));
+            _enemies.Remove(_enemies.Find(enemy => enemy == enemyData));
+        }
+
+        public EnemyView GetNearestEnemy(Vector3 transformPosition, float attackRange)
+        {
+            EnemyView nearestEnemy = null;
+            float nearestDistance = attackRange;
+            foreach (EnemyView enemy in _enemies)
+            {
+                float distance = Vector3.Distance(transformPosition, enemy.transform.position);
+                if (distance < nearestDistance)
+                {
+                    nearestDistance = distance;
+                    nearestEnemy = enemy;
+                }
+            }
+
+            return nearestEnemy;
         }
     }
 }

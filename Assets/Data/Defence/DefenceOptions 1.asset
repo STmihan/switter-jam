@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DefenceOptions 1
   m_EditorClassIdentifier: 
   <EnemyWaves>k__BackingField:
-  - <TimeBetweenBlocks>k__BackingField: 3
+  - <TimeBetweenBlocks>k__BackingField: 1
     _enemyQueueBlocks:
     - <EnemyDatas>k__BackingField:
       - {fileID: 11400000, guid: eea881edd389f804896a4f9245ec3985, type: 2}

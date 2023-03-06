@@ -1,20 +1,22 @@
 ﻿using Data.Foods;
 using UnityEngine;
 
-namespace Gameplay.Defence.Controllers
+namespace Gameplay.Defence.Views
 {
     public class FoodCellView : MonoBehaviour
     {
-        [SerializeField] private SpriteRenderer _spriteRenderer;
+        private FoodTowerView _view;
         
         public void UpdateView(FoodBase food)
         {
             if (food == null)
             {
-                _spriteRenderer.sprite = null;
+                Destroy(_view.gameObject);
+                _view = null;
                 return;
             }
-            _spriteRenderer.sprite = food.Sprite;
+            _view = Instantiate(food.Prefab, transform);
+            _view.Setup(food);
         }
     }
 }
