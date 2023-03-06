@@ -1,12 +1,12 @@
-name: Release on Main 😎
+name: Release on Master 😎
 
 on: 
   # This allows for manual triggering of the action
   workflow_dispatch:
-  # This will run this action on every push to the main branch - update as required
+  # This will run this action on every push to the master branch - update as required
   push:
     branches:
-      - main
+      - master
 
 jobs:    
   build-project:
