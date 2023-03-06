@@ -12,10 +12,12 @@ namespace Gameplay.UI.Defence
         private FoodController FoodController => GameManager.Instance.GlobalStateMachine.Data.FoodController;
         private void Start()
         {
-            foreach (FoodBase availableFood in FoodController.Foods)
+            foreach (var pair in FoodController.Foods)
             {
+                FoodBase food = pair.Key;
+                int count = pair.Value;
                 AvailableFoodListItem item = Instantiate(_availableFoodListItemPrefab, transform);
-                item.SetFoodItem(availableFood);
+                item.SetFoodItem(food, count);
             }
         }
     }

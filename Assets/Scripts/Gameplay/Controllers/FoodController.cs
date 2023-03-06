@@ -9,16 +9,16 @@ namespace Gameplay.Controllers
     public class FoodController
     {
         public readonly FoodBase[] AvailableFoods;
-        
+
         public event Action<IngredientData> OnIngredientSelected;
         public event Action<IngredientData> OnIngredientDeselected;
         public event Action<FoodBase> OnFoodAdded;
 
-        public FoodBase[] Foods => _foods.ToArray();
+        public Dictionary<FoodBase, int> Foods => _foods.ToDictionary(x => x.Key, x => x.Value);
 
-        private readonly List<FoodBase> _foods = new();
+        private readonly Dictionary<FoodBase, int> _foods = new();
         private readonly List<IngredientData> _selectedIngredients = new();
-        
+
         public FoodController(FoodBase[] availableFoods)
         {
             AvailableFoods = availableFoods;
@@ -31,6 +31,7 @@ namespace Gameplay.Controllers
                 DeselectIngredient(ingredientData);
                 return;
             }
+
             _selectedIngredients.Add(ingredientData);
             OnIngredientSelected?.Invoke(ingredientData);
             TryAddFood();
@@ -48,6 +49,7 @@ namespace Gameplay.Controllers
             {
                 OnIngredientDeselected?.Invoke(ingredient);
             }
+
             _selectedIngredients.Clear();
         }
 
@@ -73,15 +75,20 @@ namespace Gameplay.Controllers
                 }
             }
 
-            if (_foods.Contains(availableFood)) return false;
-
             return true;
         }
 
         private void AddFood(FoodBase food)
         {
             DeselectAll();
-            _foods.Add(food);
+            if (_foods.ContainsKey(food))
+            {
+                _foods[food]++;
+            }
+            else
+            {
+                _foods.Add(food, 1);
+            }
             OnFoodAdded?.Invoke(food);
         }
 

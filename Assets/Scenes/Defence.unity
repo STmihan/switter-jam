@@ -324,6 +324,7 @@ MonoBehaviour:
   - {fileID: 127483952}
   - {fileID: 1777525001}
   - {fileID: 2126572661}
+  _timeBetweenEnemies: 0.4
 --- !u!4 &177350898
 Transform:
   m_ObjectHideFlags: 0
@@ -863,7 +864,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 3
-  m_Spacing: 24
+  m_Spacing: 56
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -947,7 +948,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
