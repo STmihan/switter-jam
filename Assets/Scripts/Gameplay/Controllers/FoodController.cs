@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Data.Foods;
@@ -15,7 +16,7 @@ namespace Gameplay.Controllers
         public event Action<FoodBase> OnFoodAdded;
 
         public Dictionary<FoodBase, int> Foods => _foods.ToDictionary(x => x.Key, x => x.Value);
-
+        
         private readonly Dictionary<FoodBase, int> _foods = new();
         private readonly List<IngredientData> _selectedIngredients = new();
 
@@ -35,6 +36,15 @@ namespace Gameplay.Controllers
             _selectedIngredients.Add(ingredientData);
             OnIngredientSelected?.Invoke(ingredientData);
             TryAddFood();
+        }
+
+        public void RemoveFood(FoodBase selectedFood)
+        {
+            _foods[selectedFood]--;
+            if (_foods[selectedFood] == 0)
+            {
+                _foods.Remove(selectedFood);
+            }
         }
 
         private void DeselectIngredient(IngredientData ingredientData)
@@ -90,12 +100,6 @@ namespace Gameplay.Controllers
                 _foods.Add(food, 1);
             }
             OnFoodAdded?.Invoke(food);
-        }
-
-        public void Clear()
-        {
-            _selectedIngredients.Clear();
-            _foods.Clear();
         }
     }
 }

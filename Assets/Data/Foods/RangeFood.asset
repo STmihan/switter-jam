@@ -18,6 +18,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a36e91dc692316145b8a1ed981e9c2cb, type: 2}
   <Sprite>k__BackingField: {fileID: 21300000, guid: d9055de7425694848ba9308d5bdbce92, type: 3}
   <Prefab>k__BackingField: {fileID: 6935004150363038738, guid: 8b99bbdfa8719ff41972df41cab72c62, type: 3}
+  <Health>k__BackingField: 50
   <AttackRange>k__BackingField: 5
   <AttackInterval>k__BackingField: 1
   <AttackDamage>k__BackingField: 10

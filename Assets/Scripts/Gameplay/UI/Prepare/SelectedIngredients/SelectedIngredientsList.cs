@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Data.Ingredients;
-using GameLoop;
 using Gameplay.Controllers;
+using Global;
 using UnityEngine;
 
 namespace Gameplay.UI.Prepare.SelectedIngredients
@@ -12,7 +12,7 @@ namespace Gameplay.UI.Prepare.SelectedIngredients
 
         private List<SelectedIngredientsItem> _selectedIngredients = new();
 
-        private FoodController FoodController => GameManager.Instance.GlobalStateMachine.Data.FoodController;
+        private FoodController FoodController => GameplayController.Instance.FoodController;
 
         private void Start()
         {
@@ -42,7 +42,7 @@ namespace Gameplay.UI.Prepare.SelectedIngredients
 
         private void OnDestroy()
         {
-            if (GameManager.Instance != null)
+            if (GameplayController.Instance != null && FoodController != null)
             {
                 FoodController.OnIngredientSelected -= OnIngredientSelected;
                 FoodController.OnIngredientDeselected -= OnIngredientDeselected;

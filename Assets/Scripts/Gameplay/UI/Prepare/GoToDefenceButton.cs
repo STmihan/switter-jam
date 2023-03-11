@@ -1,5 +1,6 @@
-﻿using GameLoop;
-using GameLoop.States;
+﻿using Gameplay.Controllers;
+using Global;
+using Loops.GameplayLoop.States;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,10 +19,7 @@ namespace Gameplay.UI.Prepare
 
         private void GoToDefence()
         {
-            GameManager
-                .Instance
-                .GlobalStateMachine
-                .ChangeState(new LoadState(DefenceState.SceneName, new DefenceState()));
+            GameplayController.Instance.GameplayLoop.StateMachine.ChangeState(new FightState());
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Data.Foods;
-using GameLoop;
 using Gameplay.Controllers;
+using Global;
 using UnityEngine;
 
 namespace Gameplay.UI.Prepare.FoodHelper
@@ -9,7 +9,7 @@ namespace Gameplay.UI.Prepare.FoodHelper
     {
         [SerializeField] private FoodHelperItem _foodHelperItemPrefab;
         
-        private FoodController FoodController => GameManager.Instance.GlobalStateMachine.Data.FoodController;
+        private FoodController FoodController => GameplayController.Instance.FoodController;
 
         private void Start()
         {

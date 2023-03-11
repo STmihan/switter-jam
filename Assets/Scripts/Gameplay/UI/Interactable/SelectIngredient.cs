@@ -1,6 +1,6 @@
 ﻿using Data.Ingredients;
-using GameLoop;
 using Gameplay.Controllers;
+using Global;
 using UnityEngine;
 
 namespace Gameplay.UI.Interactable
@@ -9,7 +9,7 @@ namespace Gameplay.UI.Interactable
     {
         [SerializeField] private IngredientData _ingredientData;
 
-        private static FoodController FoodController => GameManager.Instance.GlobalStateMachine.Data.FoodController;
+        private static FoodController FoodController => GameplayController.Instance.FoodController;
 
         public void Interact()
         {

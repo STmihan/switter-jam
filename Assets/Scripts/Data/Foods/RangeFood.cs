@@ -1,11 +1,11 @@
-﻿using Gameplay.Defence.Enemies;
-using Gameplay.Defence.Views;
+﻿using Gameplay.Interfaces;
+using Gameplay.Views;
 using UnityEngine;
 
 namespace Data.Foods
 {
     [CreateAssetMenu(menuName = "Foods/Create RangeFood", fileName = "RangeFood", order = 0)]
-    public class RangeFood : FoodBase, IAttackable
+    public class RangeFood : FoodTowerBase, IAttackable
     {
         [field: SerializeField]
         public float AttackRange { get; private set; }

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Speed>k__BackingField: 1
   <Health>k__BackingField: 50
-  <Damage>k__BackingField: 5
-  <AttacksPerSecond>k__BackingField: 1
+  <Damage>k__BackingField: 25
+  <AttacksInterval>k__BackingField: 1
+  <AttackRange>k__BackingField: 1
   <EnemyViewPrefab>k__BackingField: {fileID: 3614263709513618100, guid: b8b71f6f1c5da904887dbab76da3e978, type: 3}

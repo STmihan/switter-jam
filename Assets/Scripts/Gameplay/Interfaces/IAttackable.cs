@@ -1,7 +1,6 @@
-﻿using Gameplay.Defence.Enemies;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Data.Foods
+namespace Gameplay.Interfaces
 {
     public interface IAttackable
     {

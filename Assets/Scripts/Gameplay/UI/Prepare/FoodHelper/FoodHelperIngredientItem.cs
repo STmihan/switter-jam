@@ -1,6 +1,6 @@
 ﻿using Data.Ingredients;
-using GameLoop;
 using Gameplay.Controllers;
+using Global;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,12 +9,12 @@ namespace Gameplay.UI.Prepare.FoodHelper
     public class FoodHelperIngredientItem : MonoBehaviour
     {
         [SerializeField] private Image _image;
-        
+
         public bool HandlingEvents { get; set; }
 
         private IngredientData _ingredientData;
 
-        private FoodController FoodController => GameManager.Instance.GlobalStateMachine.Data.FoodController;
+        private FoodController FoodController => GameplayController.Instance.FoodController;
 
         private void Start()
         {
@@ -46,8 +46,11 @@ namespace Gameplay.UI.Prepare.FoodHelper
 
         private void OnDestroy()
         {
-            FoodController.OnIngredientSelected -= OnIngredientSelected;
-            FoodController.OnIngredientDeselected -= OnIngredientDeselected;
+            if (GameplayController.Instance != null)
+            {
+                FoodController.OnIngredientSelected -= OnIngredientSelected;
+                FoodController.OnIngredientDeselected -= OnIngredientDeselected;
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Utility
 {
@@ -11,6 +12,11 @@ namespace Utility
         {
             Instance = (T)this;
             OnCreate();
+        }
+
+        private void OnDestroy()
+        {
+            Instance = null;
         }
 
         protected virtual void OnCreate() { }
