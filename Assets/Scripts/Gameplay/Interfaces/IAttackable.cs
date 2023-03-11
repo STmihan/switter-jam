@@ -1,13 +1,14 @@
-﻿using Gameplay.Defence.Enemies;
+﻿using Gameplay.Views;
+using Gameplay.Views.Towers;
 using UnityEngine;
 
-namespace Data.Foods
+namespace Gameplay.Interfaces
 {
     public interface IAttackable
     {
         float AttackRange { get; }
         float AttackInterval { get; }
         int AttackDamage { get; }
-        void Attack(Transform transform, IHittable target);
+        void Attack(TowerView view, IHittable target);
     }
 }

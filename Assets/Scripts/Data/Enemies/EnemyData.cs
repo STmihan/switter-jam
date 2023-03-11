@@ -1,4 +1,4 @@
-﻿using Gameplay.Defence.Enemies;
+﻿using Gameplay.Views;
 using UnityEngine;
 
 namespace Data.Enemies
@@ -9,7 +9,8 @@ namespace Data.Enemies
         [field: SerializeField] public float Speed { get; private set; }
         [field: SerializeField] public int Health { get; private set; }
         [field: SerializeField] public int Damage { get; private set; }
-        [field: SerializeField] public float AttacksPerSecond { get; private set; }
+        [field: SerializeField] public float AttacksInterval { get; private set; }
+        [field: SerializeField] public float AttackRange { get; private set; }
         [field: SerializeField] public EnemyView EnemyViewPrefab { get; private set; }
     }
 }

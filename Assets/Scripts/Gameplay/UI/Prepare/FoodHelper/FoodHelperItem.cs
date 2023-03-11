@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Data.Foods;
+using Data.Foods.Shared;
 using Data.Ingredients;
 using DG.Tweening;
-using GameLoop;
 using Gameplay.Controllers;
+using Global;
 using TMPro;
 using UnityEngine;
 
@@ -19,7 +21,7 @@ namespace Gameplay.UI.Prepare.FoodHelper
         private FoodBase _foodBase;
         private List<FoodHelperIngredientItem> _ingredientItems = new();
 
-        private FoodController FoodController => GameManager.Instance.GlobalStateMachine.Data.FoodController;
+        private FoodController FoodController => GameplayController.Instance.FoodController;
 
         private void Start()
         {
@@ -27,9 +29,23 @@ namespace Gameplay.UI.Prepare.FoodHelper
             FoodController.OnFoodAdded += OnFoodAdded;
         }
 
+        private void OnEnable()
+        {
+            if (_foodBase != null && FoodController.Foods.TryGetValue(_foodBase, out int count))
+            {
+                _countText.text = count.ToString();
+            }
+            else
+            {
+                _countText.text = "";
+            }
+        }
+
         private void OnFoodAdded(FoodBase obj)
         {
-            _countText.text = FoodController.Foods[_foodBase].ToString();
+            if (obj != _foodBase) return;
+            
+            _countText.text = FoodController.Foods[obj].ToString();
         }
 
         public void SetFoodItem(FoodBase foodBase)
@@ -45,7 +61,10 @@ namespace Gameplay.UI.Prepare.FoodHelper
 
         private void OnDestroy()
         {
-            FoodController.OnFoodAdded -= OnFoodAdded;
+            if (GameplayController.Instance != null)
+            {
+                FoodController.OnFoodAdded -= OnFoodAdded;
+            }
         }
     }
 }

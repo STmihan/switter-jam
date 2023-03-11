@@ -1,5 +1,5 @@
-﻿using GameLoop;
-using GameLoop.States;
+﻿using Loops.GlobalLoop;
+using Loops.GlobalLoop.States;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,10 +18,10 @@ namespace Menu
 
         private void Play()
         {
-            GameManager
+            GlobalLoop
                 .Instance
                 .GlobalStateMachine
-                .ChangeState(new LoadState(PrepareState.SceneName, new PrepareState()));
+                .ChangeState(new LoadState(GameplayState.SceneName, new GameplayState()));
         }
     }
 }
