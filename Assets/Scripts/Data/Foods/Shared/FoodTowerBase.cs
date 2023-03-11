@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Data.Foods
+namespace Data.Foods.Shared
 {
     public abstract class FoodTowerBase : FoodBase
     {

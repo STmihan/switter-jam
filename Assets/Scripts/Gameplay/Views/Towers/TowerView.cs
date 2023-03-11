@@ -1,13 +1,14 @@
 ﻿using System;
-using Data.Foods;
+using Data.Foods.Shared;
 using Gameplay.Controllers;
 using Gameplay.Interfaces;
 using UnityEngine;
 
-namespace Gameplay.Views
+namespace Gameplay.Views.Towers
 {
     public class TowerView : MonoBehaviour, IEnemyTarget
     {
+        [field: SerializeField] public Transform Muzzle { get; private set; }
         public bool IsStunned { get; set; }
         public event Action<TowerView> OnDead;
 
@@ -26,47 +27,47 @@ namespace Gameplay.Views
             }
         }
 
-        public bool IsDead => _health <= 0;
+        public bool IsDead => Health <= 0;
 
-        private FoodBase _food;
-        private EnemyView _target;
+        protected FoodBase Food;
+        protected EnemyView Target;
 
-        private float _lastAttackTime;
+        protected float LastAttackTime;
 
-        private int _health;
+        protected int Health;
 
 
         public void Setup(FoodTowerBase food)
         {
-            _food = food;
-            _health = food.Health;
+            Food = food;
+            Health = food.Health;
         }
 
         private void Update()
         {
-            if (_food is IAttackable attackable)
+            if (Food is IAttackable attackable)
             {
-                if (_target == null || _target.IsDead)
+                if (Target == null || Target.IsDead)
                 {
                     UpdateTarget(attackable);
                 }
                 else
                 {
-                    if (Vector3.Distance(transform.position, _target.transform.position) > attackable.AttackRange)
+                    if (Vector3.Distance(transform.position, Target.transform.position) > attackable.AttackRange)
                     {
                         UpdateTarget(attackable);
                     }
                     else
                     {
-                        RotateTo(_target.transform.position);
+                        RotateTo(Target.transform.position);
 
-                        if (Time.time - _lastAttackTime < attackable.AttackInterval)
+                        if (Time.time - LastAttackTime < attackable.AttackInterval)
                         {
                             return;
                         }
 
-                        attackable.Attack(transform, _target);
-                        _lastAttackTime = Time.time;
+                        attackable.Attack(this, Target);
+                        LastAttackTime = Time.time;
                     }
                 }
             }
@@ -75,7 +76,7 @@ namespace Gameplay.Views
         private void UpdateTarget(IAttackable attackable)
         {
             EnemyController enemyController = GameplayController.Instance.EnemyController;
-            _target = enemyController.GetNearestEnemy(transform.position, attackable.AttackRange);
+            Target = enemyController.GetNearestEnemy(transform.position, attackable.AttackRange);
         }
 
         private void RotateTo(Vector3 target)
@@ -86,9 +87,9 @@ namespace Gameplay.Views
 
         public void Hit(int damage)
         {
-            _health -= damage;
+            Health -= damage;
 
-            if (_health <= 0)
+            if (Health <= 0)
             {
                 Die();
             }

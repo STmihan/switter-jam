@@ -23,3 +23,4 @@ MonoBehaviour:
   <AttackInterval>k__BackingField: 2
   <AttackDamage>k__BackingField: 10
   _projectilePrefab: {fileID: 1214325976185557061, guid: bb5f0695bbebf1047813ffe7ab598ab4, type: 3}
+  _projectileSpeed: 10

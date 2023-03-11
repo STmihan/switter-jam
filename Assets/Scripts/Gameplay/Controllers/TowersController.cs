@@ -3,6 +3,7 @@ using Data.Foods;
 using Data.Foods.Shared;
 using Gameplay.GridSystem;
 using Gameplay.Views;
+using Gameplay.Views.Grid;
 using UnityEngine;
 
 namespace Gameplay.Controllers

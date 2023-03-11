@@ -8,7 +8,7 @@ namespace Gameplay.Views.Projectiles
         protected IHittable Target;
         protected float Speed;
         protected int Damage;
-        public void Setup(IHittable target, Vector3 start, float projectileSpeed, int damage)
+        public virtual void Setup(IHittable target, Vector3 start, float projectileSpeed, int damage)
         {
             transform.position = start;
             Speed = projectileSpeed;

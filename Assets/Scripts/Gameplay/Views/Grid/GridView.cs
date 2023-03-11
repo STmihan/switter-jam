@@ -2,7 +2,7 @@
 using Gameplay.GridSystem;
 using UnityEngine;
 
-namespace Gameplay.Views
+namespace Gameplay.Views.Grid
 {
     public class GridView : MonoBehaviour
     {

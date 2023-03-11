@@ -1,6 +1,8 @@
-﻿using Gameplay.Interfaces;
+﻿using Data.Foods.Shared;
+using Gameplay.Interfaces;
 using Gameplay.Views;
 using Gameplay.Views.Projectiles;
+using Gameplay.Views.Towers;
 using UnityEngine;
 
 namespace Data.Foods
@@ -23,10 +25,10 @@ namespace Data.Foods
         [SerializeField]
         private float _projectileSpeed;
 
-        public void Attack(Transform transform, IHittable target)
+        public void Attack(TowerView view, IHittable target)
         {
-            AutoProjectileView autoProjectile = Instantiate(_autoProjectilePrefab, transform.position, Quaternion.identity);
-            autoProjectile.Setup(target, transform.position, _projectileSpeed, AttackDamage);
+            AutoProjectileView autoProjectile = Instantiate(_autoProjectilePrefab, view.Muzzle.position, Quaternion.identity);
+            autoProjectile.Setup(target, view.Muzzle.position, _projectileSpeed, AttackDamage);
         }
     }
 }

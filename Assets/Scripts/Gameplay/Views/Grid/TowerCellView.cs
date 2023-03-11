@@ -1,9 +1,9 @@
 ﻿using System;
-using Data.Foods;
 using Data.Foods.Shared;
+using Gameplay.Views.Towers;
 using UnityEngine;
 
-namespace Gameplay.Views
+namespace Gameplay.Views.Grid
 {
     public class TowerCellView : MonoBehaviour
     {

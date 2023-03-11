@@ -6,6 +6,12 @@ namespace Gameplay.Views.Projectiles
     {
         private void Update()
         {
+            if (Target == null)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            
             transform.position = Vector3.MoveTowards(transform.position, Target.GameObject.transform.position, Speed * Time.deltaTime);
             if (Vector3.Distance(transform.position, Target.GameObject.transform.position) < 0.05f)
             {

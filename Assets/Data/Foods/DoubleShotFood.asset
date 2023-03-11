@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45641304b5ca46f99eb2e20363a97b82, type: 3}
+  m_Name: DoubleShotFood
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Double Shoot Food
+  <Ingredients>k__BackingField:
+  - {fileID: 11400000, guid: 91288d48ca4d2bf4fabac788585f482d, type: 2}
+  - {fileID: 11400000, guid: a8aef71f84f2bab4db636aaa25dba92b, type: 2}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 4779b43c1b3df9c41b001615c3960290, type: 3}
+  <Prefab>k__BackingField: {fileID: 6935004150363038738, guid: 05819854cdde3c44dacd1c70659de230, type: 3}
+  <Health>k__BackingField: 50
+  <AttackRange>k__BackingField: 4
+  <AttackInterval>k__BackingField: 0.7
+  <AttackDamage>k__BackingField: 20
+  _attackIntervalBetweenShots: 0.1
+  _autoProjectilePrefab: {fileID: 8151418367506033868, guid: 3e9c20ab78d6a9c4fad0ef048477b38b, type: 3}
+  _projectileSpeed: 30

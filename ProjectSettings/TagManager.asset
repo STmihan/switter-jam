@@ -47,12 +47,12 @@ TagManager:
   - name: Cells
     uniqueID: 559340947
     locked: 0
+  - name: Projectiles
+    uniqueID: 2357685601
+    locked: 0
   - name: Towers
     uniqueID: 2032142593
     locked: 0
   - name: Enemies
     uniqueID: 3345878679
-    locked: 0
-  - name: Projectiles
-    uniqueID: 2357685601
     locked: 0
