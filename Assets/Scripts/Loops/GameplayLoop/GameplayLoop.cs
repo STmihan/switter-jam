@@ -33,6 +33,7 @@ namespace Loops.GameplayLoop
         public void Update() => StateMachine.Update();
         public void FixedUpdate() => StateMachine.FixedUpdate();
         public void LateUpdate() => StateMachine.LateUpdate();
+        public void OnDestroy() => StateMachine.OnDestroy();
     }
 
     public class GameplayData

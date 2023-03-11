@@ -33,5 +33,6 @@ namespace Loops.FightLoop
         public void Update() => _battleStateMachine.Update();
         public void FixedUpdate() => _battleStateMachine.FixedUpdate();
         public void LateUpdate() => _battleStateMachine.LateUpdate();
+        public void OnDestroy() => _battleStateMachine.OnDestroy();
     }
 }

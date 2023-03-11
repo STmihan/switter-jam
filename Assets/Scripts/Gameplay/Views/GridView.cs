@@ -30,14 +30,16 @@ namespace Gameplay.Views
                 transform.position
             );
 
-            for (int x = 0; x < Grid.Width; x++)
+            for (int y = 0; y < Grid.Height; y++)
             {
-                for (int y = 0; y < Grid.Height; y++)
+                for (int x = 0; x < Grid.Width; x++)
                 {
                     TowerCellView view = Instantiate(_towerCellViewPrefab, transform);
-                    view.transform.position = Grid.GetCell(x, y).Center;
+                    Vector3 pos = Grid.GetCell(x, y).Center;
+                    pos.z = y;
+                    view.transform.position = pos;
                     view.transform.localScale = Vector3.one * _cellSize;
-                    Grid.SetValue(x, y, new FoodTower(view));
+                    Grid.SetValue(x, y, new FoodTower(view, y));
                 }
             }
         }

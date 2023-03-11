@@ -13,7 +13,10 @@ namespace Loops.GameplayLoop.States
         
         public override void Exit(StateMachine<GameplayData> sm)
         {
-            sm.Data.FightUI.SetActive(false);
+            if (sm.Data.FightUI != null)
+            {
+                sm.Data.FightUI.SetActive(false);
+            }
         }
     }
 }

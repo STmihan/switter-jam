@@ -1,5 +1,6 @@
 ﻿using System;
 using Data.Foods;
+using Data.Foods.Shared;
 using Gameplay.GridSystem;
 using Gameplay.Views;
 using UnityEngine;
@@ -61,11 +62,13 @@ namespace Gameplay.Controllers
         public FoodBase Food { get; private set; }
 
         public TowerCellView View { get; }
+        public int Y { get; }
 
-        public FoodTower(TowerCellView view)
+        public FoodTower(TowerCellView view, int y)
         {
             View = view;
             View.OnTowerDied += _ => Food = null;
+            Y = y;
         }
 
         public void SetFood(FoodTowerBase food)

@@ -42,7 +42,9 @@ namespace Gameplay.UI.Prepare.FoodHelper
 
         private void OnFoodAdded(FoodBase obj)
         {
-            _countText.text = FoodController.Foods[_foodBase].ToString();
+            if (obj != _foodBase) return;
+            
+            _countText.text = FoodController.Foods[obj].ToString();
         }
 
         public void SetFoodItem(FoodBase foodBase)

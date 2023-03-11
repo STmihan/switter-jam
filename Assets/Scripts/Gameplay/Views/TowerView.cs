@@ -8,17 +8,33 @@ namespace Gameplay.Views
 {
     public class TowerView : MonoBehaviour, IEnemyTarget
     {
+        public bool IsStunned { get; set; }
         public event Action<TowerView> OnDead;
-        public Transform Transform { get; }
-        public bool IsDead { get; }
-        
+
+        public GameObject GameObject
+        {
+            get
+            {
+                try
+                {
+                    return gameObject == null ? null : gameObject;
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+            }
+        }
+
+        public bool IsDead => _health <= 0;
+
         private FoodBase _food;
         private EnemyView _target;
-        
+
         private float _lastAttackTime;
-        
+
         private int _health;
-        
+
 
         public void Setup(FoodTowerBase food)
         {
@@ -43,12 +59,12 @@ namespace Gameplay.Views
                     else
                     {
                         RotateTo(_target.transform.position);
-                        
+
                         if (Time.time - _lastAttackTime < attackable.AttackInterval)
                         {
                             return;
                         }
-                        
+
                         attackable.Attack(transform, _target);
                         _lastAttackTime = Time.time;
                     }
@@ -61,19 +77,17 @@ namespace Gameplay.Views
             EnemyController enemyController = GameplayController.Instance.EnemyController;
             _target = enemyController.GetNearestEnemy(transform.position, attackable.AttackRange);
         }
-        
+
         private void RotateTo(Vector3 target)
         {
-            Vector2 diff = target - transform.position;
-            float angle = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-            Quaternion targetRotation = Quaternion.Euler(0, 0, angle - 90);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 10 * Time.deltaTime);
+            float multiplier = target.x > transform.position.x ? 1 : -1;
+            transform.localScale = new Vector3(multiplier, 1, 1);
         }
-        
+
         public void Hit(int damage)
         {
             _health -= damage;
-            
+
             if (_health <= 0)
             {
                 Die();

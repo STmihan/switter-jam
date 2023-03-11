@@ -1,5 +1,6 @@
 ﻿using Data.Enemies;
 using Data.Foods;
+using Data.Foods.Shared;
 using Sirenix.OdinInspector;
 using UnityEngine;
 

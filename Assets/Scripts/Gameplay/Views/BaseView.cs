@@ -7,11 +7,28 @@ namespace Gameplay.Views
 {
     public class BaseView : MonoBehaviour, IEnemyTarget
     {
+        public bool IsStunned { get; set; }
         private int _health;
-        public Transform Transform { get; }
-        public bool IsDead { get; }
-        
+
+        public GameObject GameObject
+        {
+            get
+            {
+                try
+                {
+                    return gameObject == null ? null : gameObject;
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+            }
+        }
+
+        public bool IsDead => _health <= 0;
+
         public event Action<BaseView> OnBaseDied;
+
 
         private void Awake()
         {

@@ -36,5 +36,10 @@
         {
             CurrentState.LateUpdate(this);
         }
+        
+        public void OnDestroy()
+        {
+            CurrentState.Exit(this);
+        }
     }
 }

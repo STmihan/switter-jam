@@ -1,5 +1,6 @@
 ﻿using Gameplay.Interfaces;
 using Gameplay.Views;
+using Gameplay.Views.Projectiles;
 using UnityEngine;
 
 namespace Data.Foods
@@ -17,15 +18,15 @@ namespace Data.Foods
         public int AttackDamage { get; private set; }
 
         [SerializeField]
-        private ProjectileView _projectilePrefab;
+        private AutoProjectileView _autoProjectilePrefab;
 
         [SerializeField]
         private float _projectileSpeed;
 
         public void Attack(Transform transform, IHittable target)
         {
-            ProjectileView projectile = Instantiate(_projectilePrefab, transform.position, Quaternion.identity);
-            projectile.Setup(target, transform.position, _projectileSpeed, AttackDamage);
+            AutoProjectileView autoProjectile = Instantiate(_autoProjectilePrefab, transform.position, Quaternion.identity);
+            autoProjectile.Setup(target, transform.position, _projectileSpeed, AttackDamage);
         }
     }
 }

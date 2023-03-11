@@ -10,8 +10,8 @@ namespace Loops.GlobalLoop.States
     {
         public const string LoadSceneName = "Load";
         
-        private string _sceneName;
-        private StateBase<GlobalData> _nextState;
+        private readonly string _sceneName;
+        private readonly StateBase<GlobalData> _nextState;
 
         public LoadState(string sceneName, StateBase<GlobalData> nextState)
         {
@@ -21,7 +21,7 @@ namespace Loops.GlobalLoop.States
 
         public override void Enter(StateMachine<GlobalData> sm)
         {
-            GameManager.Instance.StartCoroutine(LoadScene(sm));
+            GlobalLoop.Instance.StartCoroutine(LoadScene(sm));
         }
 
         private IEnumerator LoadScene(StateMachine<GlobalData> sm)

@@ -1,5 +1,6 @@
 ﻿using System;
 using Data.Foods;
+using Data.Foods.Shared;
 using DG.Tweening;
 using Gameplay.Controllers;
 using TMPro;

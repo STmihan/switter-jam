@@ -11,13 +11,12 @@ namespace Loops.GameplayLoop.States
         public override void Enter(StateMachine<GameplayData> sm)
         {
             sm.Data.GameOverUI.SetActive(true);
-            DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0, Duration);
+            Time.timeScale = 0;
         }
 
         public override void Exit(StateMachine<GameplayData> sm)
         {
-            sm.Data.GameOverUI.SetActive(false);
-            DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 1, Duration);
+            Time.timeScale = 1;
         }
     }
 }

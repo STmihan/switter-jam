@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Data.Foods;
+using Data.Foods.Shared;
 using Gameplay.Controllers;
 using UnityEngine;
 

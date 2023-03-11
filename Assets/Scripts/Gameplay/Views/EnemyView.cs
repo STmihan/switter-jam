@@ -8,6 +8,7 @@ namespace Gameplay.Views
 {
     public class EnemyView : MonoBehaviour, ITowerTarget
     {
+        public bool IsStunned { get; set; }
         public EnemyData EnemyData { get; private set; }
 
         [ShowInInspector]
@@ -18,13 +19,28 @@ namespace Gameplay.Views
 
         public event Action<EnemyView> OnEnemyDied;
 
-        public Transform Transform => transform;
+
+        public GameObject GameObject
+        {
+            get
+            {
+                try
+                {
+                    return gameObject == null ? null : gameObject;
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+            }
+        }
 
         private float _attackTimer;
 
+
         private void Update()
         {
-            if (IsDead) return;
+            if (IsDead || IsStunned) return;
 
             FindNextTarget();
 

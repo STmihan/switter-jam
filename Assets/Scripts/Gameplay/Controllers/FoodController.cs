@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Data.Foods;
+using Data.Foods.Shared;
 using Data.Ingredients;
 
 namespace Gameplay.Controllers

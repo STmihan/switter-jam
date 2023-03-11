@@ -1,4 +1,5 @@
-﻿using Loops.GlobalLoop.States;
+﻿using System;
+using Loops.GlobalLoop.States;
 using Sirenix.OdinInspector;
 using StateManagement;
 using UnityEngine;
@@ -20,19 +21,9 @@ namespace Loops.GlobalLoop
             GlobalStateMachine = new StateMachine<GlobalData>(data, new MenuState());
         }
 
-        private void Update()
-        {
-            GlobalStateMachine.Update();
-        }
-
-        private void FixedUpdate()
-        {
-            GlobalStateMachine.FixedUpdate();
-        }
-
-        private void LateUpdate()
-        {
-            GlobalStateMachine.LateUpdate();
-        }
+        private void Update() => GlobalStateMachine.Update();
+        private void FixedUpdate() => GlobalStateMachine.FixedUpdate();
+        private void LateUpdate() => GlobalStateMachine.LateUpdate();
+        private void OnDestroy() => GlobalStateMachine.OnDestroy();
     }
 }

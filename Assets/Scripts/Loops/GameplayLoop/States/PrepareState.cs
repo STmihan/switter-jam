@@ -13,7 +13,10 @@ namespace Loops.GameplayLoop.States
 
         public override void Exit(StateMachine<GameplayData> sm)
         {
-            sm.Data.PrepareUI.SetActive(false);
+            if (sm.Data.PrepareUI != null)
+            {
+                sm.Data.PrepareUI.SetActive(false);
+            }
         }
     }
 }

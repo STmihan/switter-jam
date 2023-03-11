@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b355f33159d04d5d969085269ac8da43, type: 3}
+  m_Name: BowFood
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Bow
+  <Ingredients>k__BackingField:
+  - {fileID: 11400000, guid: a36e91dc692316145b8a1ed981e9c2cb, type: 2}
+  - {fileID: 11400000, guid: 4561ca3325fffdb4ba8c6a699f2c5932, type: 2}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 5d85c19156701f146adb7939360b6f98, type: 3}
+  <Prefab>k__BackingField: {fileID: 6935004150363038738, guid: 37eeceadf07f76849822d11c244631ff, type: 3}
+  <Health>k__BackingField: 25
+  <AttackRange>k__BackingField: 10
+  <AttackInterval>k__BackingField: 2
+  <AttackDamage>k__BackingField: 10
+  _projectilePrefab: {fileID: 1214325976185557061, guid: bb5f0695bbebf1047813ffe7ab598ab4, type: 3}

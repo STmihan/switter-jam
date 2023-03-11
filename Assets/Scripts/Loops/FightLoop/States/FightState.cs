@@ -12,21 +12,15 @@ namespace Loops.FightLoop.States
         {
             _stateMachine = sm;
             Queue<EnemyWave> wavesQueue = sm.Data.WavesQueue;
-            EnemyWave enemyWave = wavesQueue.Dequeue();
+            EnemyWave enemyWave = wavesQueue.Peek();
             sm.Data.EnemyController.StartWave(enemyWave);
             sm.Data.EnemyController.OnWaveEnded += OnWaveEnded;
         }
 
         private void OnWaveEnded(EnemyWave obj)
         {
-            if (_stateMachine.Data.WavesQueue.Count > 0)
-            {
-                _stateMachine.ChangeState(new SetupState());
-            }
-            else
-            {
-                _stateMachine.ChangeState(new EndState());
-            }
+            _stateMachine.ChangeState(new SetupState());
+
 
             _stateMachine.Data.EnemyController.OnWaveEnded -= OnWaveEnded;
         }

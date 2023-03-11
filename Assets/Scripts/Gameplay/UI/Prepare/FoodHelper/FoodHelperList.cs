@@ -1,4 +1,5 @@
 ﻿using Data.Foods;
+using Data.Foods.Shared;
 using Gameplay.Controllers;
 using Global;
 using UnityEngine;

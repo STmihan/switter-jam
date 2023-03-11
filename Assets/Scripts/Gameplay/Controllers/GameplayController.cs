@@ -65,5 +65,11 @@ namespace Gameplay.Controllers
             FightLoop.LateUpdate();
             GameplayLoop.LateUpdate();
         }
+        
+        private void OnDestroy()
+        {
+            FightLoop?.OnDestroy();
+            GameplayLoop?.OnDestroy();
+        }
     }
 }
