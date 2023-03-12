@@ -33,11 +33,15 @@ namespace Gameplay.Controllers
             {
                 foreach (EnemyData enemyData in waveEnemyQueueBlock.EnemyDatas)
                 {
+                    int i = UnityEngine.Random.Range(0, _enemySpawnPoints.Length);
                     Transform randomSpawnPoint =
-                        _enemySpawnPoints[UnityEngine.Random.Range(0, _enemySpawnPoints.Length)];
+                        _enemySpawnPoints[i];
                     EnemyView enemyView = Instantiate(enemyData.EnemyViewPrefab);
                     enemyView.SetEnemyData(enemyData);
-                    enemyView.transform.position = randomSpawnPoint.position;
+                    Vector3 position = randomSpawnPoint.position;
+                    position.z = i;
+                    enemyView.transform.position = position;
+                    enemyView.transform.localScale = Vector3.one * GameplayController.Instance.TowersController.Grid.CellSize;
                     enemyView.OnEnemyDied += EnemyDied;
                     _enemies.Add(enemyView);
                     OnEnemySpawned?.Invoke(enemyView);

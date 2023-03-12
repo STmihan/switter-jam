@@ -1,8 +1,6 @@
 ﻿using System;
-using Data.Foods;
 using Data.Foods.Shared;
 using Gameplay.GridSystem;
-using Gameplay.Views;
 using Gameplay.Views.Grid;
 using UnityEngine;
 
@@ -10,10 +8,10 @@ namespace Gameplay.Controllers
 {
     public class TowersController : MonoBehaviour
     {
-        [SerializeField] private FoodBase _selectedFood;
         [SerializeField] private GridView _gridView;
         
         public Grid<FoodTower> Grid => _gridView.Grid;
+        
         public FoodBase SelectedFood
         {
             get => _selectedFood;
@@ -28,6 +26,7 @@ namespace Gameplay.Controllers
 
         private FoodController FoodController => GameplayController.Instance.FoodController;
         private Camera _camera;
+        private FoodBase _selectedFood;
 
         private void Start()
         {

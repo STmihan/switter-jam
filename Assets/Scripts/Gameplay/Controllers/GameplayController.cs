@@ -84,7 +84,7 @@ namespace Gameplay.Controllers
         {
             SaveData oldSaveData = GameManager.Load();
             int saveScore = Score > oldSaveData.Score ? Score : oldSaveData.Score;
-            int saveTime = Time > Mathf.FloorToInt(oldSaveData.Time) ? Mathf.FloorToInt(Time) : oldSaveData.Time;
+            int saveTime = Time > oldSaveData.Time ? Mathf.FloorToInt(Time) : oldSaveData.Time;
             GameManager.Save(new SaveData { Time = saveTime, Score = saveScore });
 
             FightLoop?.OnDestroy();
