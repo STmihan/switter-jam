@@ -1,14 +1,15 @@
 ﻿using System;
+using Gameplay.Controllers;
 using Gameplay.Interfaces;
 using Global;
 using UnityEngine;
 
 namespace Gameplay.Views
 {
-    public class BaseView : MonoBehaviour, IEnemyTarget
+    public class BaseView : MonoBehaviour, IEnemyTarget, IHealth
     {
         public bool IsStunned { get; set; }
-        private int _health;
+        public int Health { get; private set; }
 
         public GameObject GameObject
         {
@@ -25,7 +26,7 @@ namespace Gameplay.Views
             }
         }
 
-        public bool IsDead => _health <= 0;
+        public bool IsDead => Health <= 0;
 
         public event Action<BaseView> OnBaseDied;
 
@@ -34,13 +35,15 @@ namespace Gameplay.Views
         {
             if (!GameManager.IsInitialized) return;
             
-            _health = GameManager.Instance.Config.BaseHealth;
+            Health = GameManager.Instance.Config.BaseHealth;
         }
 
         public void Hit(int damage)
         {
-            _health -= damage;
-            if (_health <= 0)
+            if (IsDead) return;
+            GameplayController.Instance.CameraController.Shake(0.2f, .4f);
+            Health -= damage;
+            if (Health <= 0)
             {
                 Die();
             }
