@@ -14,7 +14,7 @@ namespace Global
         public static void Save(SaveData data)
         {
             PlayerPrefs.SetInt(SaveData.ScoreKey, data.Score);
-            PlayerPrefs.GetInt(SaveData.TimeKey, data.Time);
+            PlayerPrefs.SetInt(SaveData.TimeKey, data.Time);
         }
         
         public static SaveData Load()

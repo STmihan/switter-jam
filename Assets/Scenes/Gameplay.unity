@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 58983201}
   m_Layer: 0
-  m_Name: SpawnPoint (1)
+  m_Name: SpawnPoint 4
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -502,7 +502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 344109641}
   m_Layer: 0
-  m_Name: SpawnPoint
+  m_Name: SpawnPoint 3
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1687,7 +1687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 844476992}
   m_Layer: 0
-  m_Name: SpawnPoint (3)
+  m_Name: SpawnPoint 1
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1955,10 +1955,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 844476992}
+  - {fileID: 1425518615}
   - {fileID: 344109641}
   - {fileID: 58983201}
-  - {fileID: 1425518615}
-  - {fileID: 844476992}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2210,7 +2210,7 @@ GameObject:
   - component: {fileID: 1080569920}
   - component: {fileID: 1080569919}
   m_Layer: 0
-  m_Name: FoodTowerController (Grid)
+  m_Name: TowerController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2228,7 +2228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98a7b3a7cd8645bcb8751573018f1b1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selectedFood: {fileID: 0}
   _gridView: {fileID: 1039508561}
 --- !u!4 &1080569920
 Transform:
@@ -3141,7 +3140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1425518615}
   m_Layer: 0
-  m_Name: SpawnPoint (2)
+  m_Name: SpawnPoint 2
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3707,7 +3706,7 @@ GameObject:
   - component: {fileID: 1648838865}
   - component: {fileID: 1648838866}
   m_Layer: 0
-  m_Name: FightController
+  m_Name: EnemyController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3741,10 +3740,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemySpawnPoints:
+  - {fileID: 844476992}
+  - {fileID: 1425518615}
   - {fileID: 344109641}
   - {fileID: 58983201}
-  - {fileID: 1425518615}
-  - {fileID: 844476992}
   _timeBetweenEnemies: 0.4
 --- !u!1 &1691429970
 GameObject:
