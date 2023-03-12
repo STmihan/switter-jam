@@ -1,12 +1,13 @@
 ﻿using System;
 using Data.Enemies;
+using Data.Enemies.Shared;
 using Gameplay.Interfaces;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Gameplay.Views
 {
-    public class EnemyView : MonoBehaviour, ITowerTarget
+    public abstract class EnemyView : MonoBehaviour, ITowerTarget, IHealth
     {
         public bool IsStunned { get; set; }
         public EnemyData EnemyData { get; private set; }
@@ -85,7 +86,7 @@ namespace Gameplay.Views
                     {
                         if (_attackTimer <= 0)
                         {
-                            hittable.Hit(EnemyData.Damage);
+                            Attack(hittable, EnemyData.Damage);
                             _attackTimer = EnemyData.AttacksInterval;
                         }
                         return;
@@ -96,6 +97,11 @@ namespace Gameplay.Views
             Vector2 nextPoint = Vector2.MoveTowards(transform.position, new Vector2(-1, transform.position.y),
                 EnemyData.Speed * Time.deltaTime);
             transform.position = nextPoint;
+        }
+
+        public virtual void Attack(IEnemyTarget target, int damage)
+        {
+            target.Hit(EnemyData.Damage);
         }
     }
 }

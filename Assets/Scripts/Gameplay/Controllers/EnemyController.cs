@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Data.Enemies;
+using Data.Enemies.Shared;
 using Gameplay.Views;
 using UnityEngine;
 

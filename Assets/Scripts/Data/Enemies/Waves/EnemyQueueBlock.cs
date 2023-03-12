@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Data.Enemies.Shared;
 using Sirenix.OdinInspector;
 using UnityEngine;
 

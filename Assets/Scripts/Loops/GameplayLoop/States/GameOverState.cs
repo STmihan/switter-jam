@@ -1,13 +1,10 @@
-﻿using DG.Tweening;
-using StateManagement;
+﻿using StateManagement;
 using UnityEngine;
 
 namespace Loops.GameplayLoop.States
 {
     public class GameOverState : StateBase<GameplayData>
     {
-        private const float Duration = 0.5f;
-        
         public override void Enter(StateMachine<GameplayData> sm)
         {
             sm.Data.GameOverUI.SetActive(true);

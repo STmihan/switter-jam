@@ -21,4 +21,4 @@ MonoBehaviour:
   <DefenceOptions>k__BackingField:
   - {fileID: 11400000, guid: 5b27f594965102a4aa707d3d70adfa4b, type: 2}
   <BaseHealth>k__BackingField: 200
-  TimeBetweenWaves: 5
+  TimeBetweenWaves: 10

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Gameplay.Views.Towers
 {
-    public class TowerView : MonoBehaviour, IEnemyTarget
+    public class TowerView : MonoBehaviour, IEnemyTarget, IHealth
     {
         [field: SerializeField] public Transform Muzzle { get; private set; }
         public bool IsStunned { get; set; }
@@ -34,7 +34,7 @@ namespace Gameplay.Views.Towers
 
         protected float LastAttackTime;
 
-        protected int Health;
+        public int Health { get; protected set; }
 
 
         public void Setup(FoodTowerBase food)
