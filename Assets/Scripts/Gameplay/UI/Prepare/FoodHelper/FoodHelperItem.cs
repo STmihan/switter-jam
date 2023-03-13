@@ -1,21 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using Data.Foods;
+﻿using System.Collections.Generic;
 using Data.Foods.Shared;
 using Data.Ingredients;
-using DG.Tweening;
 using Gameplay.Controllers;
-using Global;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Gameplay.UI.Prepare.FoodHelper
 {
     public class FoodHelperItem : MonoBehaviour
     {
         [SerializeField] private RectTransform _content;
+        
         [SerializeField] private FoodHelperIngredientItem _ingredientItemPrefab;
-        [SerializeField] private CanvasGroup _canvasGroup;
+        [SerializeField] private Image _foodImage;
         [SerializeField] private TMP_Text _countText;
 
         private FoodBase _foodBase;
@@ -55,6 +53,7 @@ namespace Gameplay.UI.Prepare.FoodHelper
             {
                 FoodHelperIngredientItem item = Instantiate(_ingredientItemPrefab, _content);
                 item.SetIngredient(ingredient);
+                _foodImage.sprite = _foodBase.Sprite;
                 _ingredientItems.Add(item);
             }
         }
