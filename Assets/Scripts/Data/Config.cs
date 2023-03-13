@@ -14,7 +14,7 @@ namespace Data
 
         [ListDrawerSettings(ShowIndexLabels = true)]
         [field: SerializeField]
-        public DefenceOptions[] DefenceOptions { get; private set; }
+        public DefenceOptions DefenceOptions { get; private set; }
         [field: SerializeField]
         public int BaseHealth { get; private set; }
 

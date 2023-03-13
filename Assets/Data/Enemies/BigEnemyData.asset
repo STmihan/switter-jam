@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BigEnemyData
   m_EditorClassIdentifier: 
   <Speed>k__BackingField: 0.5
-  <Health>k__BackingField: 120
+  <Health>k__BackingField: 130
   <Damage>k__BackingField: 30
   <AttacksInterval>k__BackingField: 2
-  <AttackRange>k__BackingField: 2.1
+  <AttackRange>k__BackingField: 3
   <CtxEnemyViewPrefab>k__BackingField: {fileID: 3280238081262535631, guid: 4337821573663b1488643e27c6b8e9a4, type: 3}

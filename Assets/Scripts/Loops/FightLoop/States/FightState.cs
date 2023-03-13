@@ -11,8 +11,7 @@ namespace Loops.FightLoop.States
         public override void Enter(StateMachine<FightData> sm)
         {
             _stateMachine = sm;
-            Queue<EnemyWave> wavesQueue = sm.Data.WavesQueue;
-            EnemyWave enemyWave = wavesQueue.Peek();
+            EnemyWave enemyWave = sm.Data.DefenceOptions.GenerateWave(sm.Data.EnemyController.CurrentWave);
             sm.Data.EnemyController.StartWave(enemyWave);
             sm.Data.EnemyController.OnWaveEnded += OnWaveEnded;
         }

@@ -20,7 +20,7 @@ namespace Loops.FightLoop
 
             FightData = new FightData(
                 GameManager.Instance.Config.TimeBetweenWaves,
-                new Queue<EnemyWave>(GameManager.Instance.Config.DefenceOptions[0].EnemyWaves),
+                GameManager.Instance.Config.DefenceOptions,
                 towersController,
                 enemyController
             );

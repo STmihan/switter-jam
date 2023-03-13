@@ -10,6 +10,8 @@ namespace Gameplay.Controllers
 {
     public class EnemyController : MonoBehaviour
     {
+        public int CurrentWave { get; private set; } = 1;
+        
         [SerializeField] private Transform[] _enemySpawnPoints;
         [SerializeField] private float _timeBetweenEnemies = .4f;
 
@@ -29,6 +31,7 @@ namespace Gameplay.Controllers
 
         private IEnumerator SpawnWave(EnemyWave wave)
         {
+            CurrentWave++;
             foreach (EnemyQueueBlock waveEnemyQueueBlock in wave.EnemyQueueBlocks)
             {
                 foreach (EnemyData enemyData in waveEnemyQueueBlock.EnemyDatas)
