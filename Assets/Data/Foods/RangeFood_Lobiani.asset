@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c0b450bc6964e41b05fc18a8645547d, type: 3}
+  m_Name: RangeFood_Lobiani
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Lobiani
+  <Ingredients>k__BackingField:
+  - {fileID: 11400000, guid: a8aef71f84f2bab4db636aaa25dba92b, type: 2}
+  - {fileID: 11400000, guid: 91288d48ca4d2bf4fabac788585f482d, type: 2}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 588e21eeeb3348249a5be4602fef1758, type: 3}
+  <Prefab>k__BackingField: {fileID: 6935004150363038738, guid: 8b99bbdfa8719ff41972df41cab72c62, type: 3}
+  <Health>k__BackingField: 50
+  <AttackRange>k__BackingField: 5
+  <AttackInterval>k__BackingField: 1
+  <AttackDamage>k__BackingField: 10
+  _autoProjectilePrefab: {fileID: 148869425432025437, guid: c0e912728ef6e8844a1a7d9b4eb7d025, type: 3}
+  _projectileSpeed: 10
