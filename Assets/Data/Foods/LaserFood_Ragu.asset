@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35815fd801ad489d8ca07fbfd38cd7bd, type: 3}
-  m_Name: LaserFood
+  m_Name: LaserFood_Ragu
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Laser
+  <Name>k__BackingField: Ragu
   <Ingredients>k__BackingField:
-  - {fileID: 11400000, guid: 91288d48ca4d2bf4fabac788585f482d, type: 2}
   - {fileID: 11400000, guid: 4561ca3325fffdb4ba8c6a699f2c5932, type: 2}
-  <Sprite>k__BackingField: {fileID: 21300000, guid: 8211a5d3935dca94b997ac35667108ba, type: 3}
+  - {fileID: 11400000, guid: a36e91dc692316145b8a1ed981e9c2cb, type: 2}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 48fda70cea0e173439ec0f0e9e23f6cd, type: 3}
   <Prefab>k__BackingField: {fileID: 5641012832686938480, guid: 6a661f5130427ed48987e96011df083b, type: 3}
   <Health>k__BackingField: 40
   <AttackRange>k__BackingField: 7

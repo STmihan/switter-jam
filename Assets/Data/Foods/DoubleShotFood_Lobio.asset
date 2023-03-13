@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45641304b5ca46f99eb2e20363a97b82, type: 3}
-  m_Name: DoubleShotFood
+  m_Name: DoubleShotFood_Lobio
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Double Shoot Food
+  <Name>k__BackingField: Lobio
   <Ingredients>k__BackingField:
-  - {fileID: 11400000, guid: 91288d48ca4d2bf4fabac788585f482d, type: 2}
   - {fileID: 11400000, guid: a8aef71f84f2bab4db636aaa25dba92b, type: 2}
-  <Sprite>k__BackingField: {fileID: 21300000, guid: 4779b43c1b3df9c41b001615c3960290, type: 3}
+  - {fileID: 11400000, guid: 4561ca3325fffdb4ba8c6a699f2c5932, type: 2}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 081fc3ee1cea57a4288bcd08dbf892cf, type: 3}
   <Prefab>k__BackingField: {fileID: 6935004150363038738, guid: 05819854cdde3c44dacd1c70659de230, type: 3}
   <Health>k__BackingField: 50
   <AttackRange>k__BackingField: 4

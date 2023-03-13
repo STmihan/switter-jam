@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 513d1032098945d2ba4a0edd45f5f90a, type: 3}
-  m_Name: IngredientData 1
+  m_Name: IngredientTesto
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Diet
-  <Sprite>k__BackingField: {fileID: 21300000, guid: 4fb79699fe224014ebc3eb72e86711a8, type: 3}
+  <Name>k__BackingField: Testo
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 0f6763ccb058e9f4ebc39a0e5baf42c1, type: 3}

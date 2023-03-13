@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Data.Foods;
 using Data.Foods.Shared;
 using Gameplay.Controllers;
+using Global;
 using UnityEngine;
 
 namespace Gameplay.UI.Fight
@@ -16,6 +17,8 @@ namespace Gameplay.UI.Fight
 
         private void OnEnable()
         {
+            if (!GameManager.IsInitialized) return;
+            
             SetItems();
         }
 

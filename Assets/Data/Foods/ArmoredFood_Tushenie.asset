@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71e28761106b411e8d17bd98187379a9, type: 3}
-  m_Name: ArmoredFood
+  m_Name: ArmoredFood_Tushenie
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: 
+  <Name>k__BackingField: Tushenie
   <Ingredients>k__BackingField:
   - {fileID: 11400000, guid: a8aef71f84f2bab4db636aaa25dba92b, type: 2}
-  - {fileID: 11400000, guid: 4561ca3325fffdb4ba8c6a699f2c5932, type: 2}
-  <Sprite>k__BackingField: {fileID: 21300000, guid: bffe588dc15a494449fc470ec54a52dd, type: 3}
+  - {fileID: 11400000, guid: a36e91dc692316145b8a1ed981e9c2cb, type: 2}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: dd7ae1c785a6a2247b28a8492647a81f, type: 3}
   <Prefab>k__BackingField: {fileID: 6935004150363038738, guid: 54dec8510dd6ce24bbcd7f951e2f4e1a, type: 3}
   <Health>k__BackingField: 100

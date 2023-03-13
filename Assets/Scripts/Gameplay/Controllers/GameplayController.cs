@@ -26,6 +26,7 @@ namespace Gameplay.Controllers
         [field: SerializeField] public TowersController TowersController { get; private set; }
 
         [field: SerializeField] public EnemyController EnemyController { get; private set; }
+        [field: SerializeField] public PauseController PauseController { get; private set; }
         public FoodController FoodController { get; private set; }
         public FightLoop FightLoop { get; private set; }
         public GameplayLoop GameplayLoop { get; private set; }
