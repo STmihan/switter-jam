@@ -20,6 +20,6 @@ MonoBehaviour:
   <Prefab>k__BackingField: {fileID: 5641012832686938480, guid: 6a661f5130427ed48987e96011df083b, type: 3}
   <Health>k__BackingField: 40
   <AttackRange>k__BackingField: 7
-  <AttackInterval>k__BackingField: 0.2
-  <AttackDamage>k__BackingField: 3
+  <AttackInterval>k__BackingField: 0.3
+  <AttackDamage>k__BackingField: 2
   _laserProjectilePrefab: {fileID: 5640117882646323411, guid: 3a5c0f3a4f921114a8ead73255e7331d, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b9cd65729241959a12001e51165be5, type: 3}
   m_Name: SmallEnemyData
   m_EditorClassIdentifier: 
-  <Speed>k__BackingField: 1
+  <Speed>k__BackingField: 2
   <Health>k__BackingField: 60
   <Damage>k__BackingField: 20
   <AttacksInterval>k__BackingField: 1

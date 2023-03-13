@@ -7,10 +7,10 @@ using UnityEngine;
 namespace Data.Enemies
 {
 	[Serializable]
-    public class EnemyQueueBlock
+    public struct EnemyQueueBlock
     {
 	    [field: SerializeField]
 	    [ListDrawerSettings(ShowIndexLabels = true)]
-	    public List<EnemyData> EnemyDatas { get; private set; }
+	    public List<EnemyData> EnemyDatas { get; set; }
     }
 }
