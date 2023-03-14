@@ -4,7 +4,7 @@ using Data.Enemies.Shared;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Data.Enemies
+namespace Data.Enemies.Waves
 {
     [CreateAssetMenu(menuName = "Defence/Create DefenceOptions", fileName = "DefenceOptions", order = 0)]
     public class DefenceOptions : SerializedScriptableObject

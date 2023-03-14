@@ -4,7 +4,7 @@ using Data.Enemies.Shared;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Data.Enemies
+namespace Data.Enemies.Waves
 {
 	[Serializable]
     public struct EnemyQueueBlock

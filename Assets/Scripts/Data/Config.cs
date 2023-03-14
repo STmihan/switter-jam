@@ -1,4 +1,5 @@
 ﻿using Data.Enemies;
+using Data.Enemies.Waves;
 using Data.Foods;
 using Data.Foods.Shared;
 using Sirenix.OdinInspector;

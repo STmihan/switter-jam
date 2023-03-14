@@ -2,6 +2,7 @@
 using Data.Foods.Shared;
 using Gameplay.GridSystem;
 using Gameplay.Views.Grid;
+using Music;
 using UnityEngine;
 
 namespace Gameplay.Controllers
@@ -53,6 +54,7 @@ namespace Gameplay.Controllers
                 cell.Data.SetFood(foodTowerBase);
                 FoodController.RemoveFood(SelectedFood);
                 SelectedFood = null;
+                AudioManager.Instance.PlaySetUnitSound();
             }
         }
     }

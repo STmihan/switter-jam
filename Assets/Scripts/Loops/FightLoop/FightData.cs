@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Data.Enemies;
+using Data.Enemies.Waves;
 using Gameplay.Controllers;
 
 namespace Loops.FightLoop

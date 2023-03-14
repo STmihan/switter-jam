@@ -1,6 +1,4 @@
-﻿using System;
-using Data.Foods;
-using Gameplay.Interfaces;
+﻿using Gameplay.Interfaces;
 using Gameplay.Views.Projectiles;
 using UnityEngine;
 
@@ -27,8 +25,9 @@ namespace Gameplay.Views.Towers
             {
                 _laser = Instantiate(laser, transform.position, Quaternion.identity);
             }
-
+            
             _laser.Setup(target, muzzlePos, 0, damage);
+            _laser.ExtSetup(AudioSource);
         }
     }
 }

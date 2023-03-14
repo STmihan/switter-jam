@@ -1,6 +1,7 @@
 ﻿using System;
 using DG.Tweening;
 using Gameplay.Interfaces;
+using Gameplay.Views.Enemies.Shared;
 using UnityEngine;
 
 namespace Gameplay.Views.Enemies

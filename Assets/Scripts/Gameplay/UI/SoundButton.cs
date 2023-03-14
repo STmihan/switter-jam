@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Music;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Gameplay.UI
@@ -21,6 +22,7 @@ namespace Gameplay.UI
         {
             _isSoundOn = !_isSoundOn;
             _button.image.sprite = _isSoundOn ? _soundOnSprite : _soundOffSprite;
+            AudioManager.Instance.Mute(!_isSoundOn);
         }
     }
 }

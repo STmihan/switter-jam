@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Data.Enemies;
 using Data.Enemies.Shared;
+using Data.Enemies.Waves;
 using Gameplay.Views;
+using Gameplay.Views.Enemies.Shared;
 using UnityEngine;
 
 namespace Gameplay.Controllers

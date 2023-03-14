@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Data.Enemies
+namespace Data.Enemies.Waves
 {
     [Serializable]
     public class EnemyWave
