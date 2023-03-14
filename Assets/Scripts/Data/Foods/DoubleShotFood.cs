@@ -23,15 +23,17 @@ namespace Data.Foods
         public void Attack(TowerView view, IHittable target)
         {
             DOTween.Sequence()
-                .AppendCallback(() => Shot(view.Muzzle, target))
+                .AppendCallback(() => Shot(view.Muzzle, target, view.AudioSource))
                 .AppendInterval(_attackIntervalBetweenShots)
-                .AppendCallback(() => Shot(view.Muzzle, target));
+                .AppendCallback(() => Shot(view.Muzzle, target, view.AudioSource));
         }
 
-        private void Shot(Transform transform, IHittable target)
+        private void Shot(Transform transform, IHittable target, AudioSource viewAudioSource)
         {
             Instantiate(_autoProjectilePrefab, transform.position, Quaternion.identity)
                 .Setup(target, transform.position, _projectileSpeed, AttackDamage);
+            viewAudioSource.pitch = Random.Range(0.7f, 1.3f);
+            viewAudioSource.PlayOneShot(viewAudioSource.clip);
         }
     }
 }

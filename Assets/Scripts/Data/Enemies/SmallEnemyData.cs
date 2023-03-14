@@ -1,6 +1,7 @@
 ﻿using Data.Enemies.Shared;
 using Gameplay.Views;
 using Gameplay.Views.Enemies;
+using Gameplay.Views.Enemies.Shared;
 using UnityEngine;
 
 namespace Data.Enemies

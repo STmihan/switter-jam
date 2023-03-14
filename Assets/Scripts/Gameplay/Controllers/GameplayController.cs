@@ -1,5 +1,6 @@
 ﻿using System;
 using Gameplay.Views;
+using Gameplay.Views.Enemies.Shared;
 using Global;
 using Loops.FightLoop;
 using Loops.GameplayLoop;

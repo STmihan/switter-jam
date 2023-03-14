@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61db59d57d174d4ab70dadffce6ea9fc, type: 3}
   m_Name: BigEnemyData
   m_EditorClassIdentifier: 
-  <Speed>k__BackingField: 0.5
-  <Health>k__BackingField: 130
-  <Damage>k__BackingField: 30
+  <Speed>k__BackingField: 0.4
+  <Health>k__BackingField: 100
+  <Damage>k__BackingField: 40
   <AttacksInterval>k__BackingField: 2
   <AttackRange>k__BackingField: 3
   <CtxEnemyViewPrefab>k__BackingField: {fileID: 3280238081262535631, guid: 4337821573663b1488643e27c6b8e9a4, type: 3}

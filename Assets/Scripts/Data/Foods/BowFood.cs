@@ -29,6 +29,8 @@ namespace Data.Foods
         {
             var projectile = Instantiate(_projectilePrefab, view.Muzzle.position, Quaternion.identity);
             projectile.Setup(target, view.Muzzle.position, _projectileSpeed, AttackDamage);
+            view.AudioSource.pitch = Random.Range(0.6f, 0.8f);
+            view.AudioSource.Play();
         }
     }
 }

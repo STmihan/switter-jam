@@ -7,6 +7,7 @@ namespace Gameplay.Controllers
 {
     public class PauseController : MonoBehaviour
     {
+        public static event Action<bool> OnPauseChanged;
         [SerializeField] private GameObject _pauseUI;
         
         public bool IsPaused { get; private set; }
@@ -26,6 +27,7 @@ namespace Gameplay.Controllers
             {
                 Pause();
             }
+            OnPauseChanged?.Invoke(IsPaused);
         }
         
         public void GoToMenu()

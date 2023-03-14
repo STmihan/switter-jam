@@ -1,11 +1,10 @@
 ﻿using System;
-using Data.Enemies;
 using Data.Enemies.Shared;
 using Gameplay.Interfaces;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Gameplay.Views
+namespace Gameplay.Views.Enemies.Shared
 {
     public abstract class EnemyView : MonoBehaviour, ITowerTarget, IHealth
     {

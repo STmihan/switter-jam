@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7803263068792032582}
   - component: {fileID: 588494121150240416}
   - component: {fileID: 5359918040153743740}
+  - component: {fileID: 7028174093599028949}
   m_Layer: 5
   m_Name: Sound
   m_TagString: Untagged
@@ -136,3 +137,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundOnSprite: {fileID: 21300000, guid: ada946d6ecd58e649ad68e70ef8e6a92, type: 3}
   _soundOffSprite: {fileID: 21300000, guid: f85bb5f8ce9ad394fbf0e2be59672845, type: 3}
+--- !u!114 &7028174093599028949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2695385757838781651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1a467de4b924469b8ca49de6f72a60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

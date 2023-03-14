@@ -2,6 +2,7 @@
 using Data.Foods.Shared;
 using Gameplay.Controllers;
 using Gameplay.Interfaces;
+using Gameplay.Views.Enemies.Shared;
 using UnityEngine;
 
 namespace Gameplay.Views.Towers
@@ -9,6 +10,7 @@ namespace Gameplay.Views.Towers
     public class TowerView : MonoBehaviour, IEnemyTarget, IHealth
     {
         [field: SerializeField] public Transform Muzzle { get; private set; }
+        public AudioSource AudioSource { get; private set; }
         public bool IsStunned { get; set; }
         public event Action<TowerView> OnDead;
 
@@ -41,6 +43,7 @@ namespace Gameplay.Views.Towers
         {
             Food = food;
             Health = food.Health;
+            AudioSource = GetComponent<AudioSource>();
         }
 
         private void Update()
